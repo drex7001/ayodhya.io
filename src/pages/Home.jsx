@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import profile_pic from "../assets/mobile.png";
 
-
 import react from "../assets/react.png";
 import laravel from "../assets/laravel.png";
 import figma from "../assets/figma.png";
@@ -522,7 +521,7 @@ const HomePage = () => {
             </div>
 
             {/* Design Thoughts */}
-            <div id="design-thoughts" className="mb-12 ">
+            <div id="design-thoughts" className="pb-12 mb-12">
               <h3 className="mb-6 text-4xl font-bold text-center text-white md:text-5xl md:text-left">
                 DESIGN <span className="block text-gray-600">THOUGHTS</span>
               </h3>
@@ -552,6 +551,11 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      {/* <div className=" footer">
+        <div className="py-4 text-center text-gray-400 ">
+          &copy; 2025 Ayodhya Ratnayake. All rights reserved.
+        </div>
+      </div> */}
     </div>
   );
 };
