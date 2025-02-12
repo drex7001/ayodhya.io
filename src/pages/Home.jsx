@@ -140,7 +140,7 @@ const HomePage = () => {
     const navbarHeight = 80; // Adjust this based on your navbar height
     if (element) {
       const offsetTop = element.offsetTop - navbarHeight;
-      
+
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -150,7 +150,7 @@ const HomePage = () => {
 
   return (
     <div className="text-white bg-indigo-900/10">
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-6 bg-indigo-950/10 backdrop-blur-sm">
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-6 motion-preset-slide-down-md bg-indigo-950/10 backdrop-blur-sm">
         <div className="flex gap-8 px-6 py-2 bg-indigo-500 bg-opacity-10 rounded-xl">
           <div
             className="relative group"
@@ -200,10 +200,10 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl pt-20 mx-auto overflow-hidden overflow-y-auto text-white">
+      <div className="max-w-6xl pt-20 mx-auto overflow-hidden overflow-y-auto text-white">
         <div className=" md:flex md:gap-8">
           {/* left side */}
-          <div className="px-4 md:w-96 xl:w-[400px] md:p-8">
+          <div className="px-4 md:w-96 xl:w-[400px] md:p-8 motion-preset-slide-right-md ">
             <div className="md:sticky md:top-8">
               <div className="relative flex flex-col items-center p-6 overflow-hidden text-black bg-indigo-900/25 rounded-3xl">
                 {/* <svg
@@ -272,17 +272,19 @@ const HomePage = () => {
           </div>
 
           {/* h-[calc(100vh-80px)] */}
-          <div className="flex-1 p-4 md:p-8 md:overflow-y-auto no-scrollbar h-[calc(100vh-80px)]">
+          <div className="motion-preset-slide-left-md flex-1 p-4 md:p-8 md:overflow-y-auto no-scrollbar h-[calc(100vh-80px)]">
             {/* Home */}
             <div id="home" className="mb-12 ">
-              <h1 className="mt-8 -mb-1 text-4xl font-bold text-center md:text-5xl sm:-mt-1 md:text-left">
-                SOFTWARE
-              </h1>
-              {/* <div className="text-sm sm:text-lg">Small text on mobile, large text on larger screens</div> */}
+              <div className="">
+                <h1 className="mt-8 -mb-1 text-4xl font-bold text-center md:text-5xl sm:-mt-1 md:text-left">
+                  SOFTWARE
+                </h1>
+                {/* <div className="text-sm sm:text-lg">Small text on mobile, large text on larger screens</div> */}
 
-              <h2 className="mb-6 text-4xl font-bold text-center text-gray-600 md:text-5xl md:text-left">
-                ENGINEER
-              </h2>
+                <h2 className="mb-6 text-4xl font-bold text-center text-gray-600 md:text-5xl md:text-left">
+                  ENGINEER
+                </h2>
+              </div>
               <p className="mb-8 font-semibold text-center text-gray-400 md:text-left">
                 Passionate about creating intuitive and engaging user
                 experiences. Specialize in transforming ideas into beautifully
@@ -466,7 +468,8 @@ const HomePage = () => {
             {/* Experience */}
             <div id="experience" className="mb-12 ">
               <h3 className="mb-6 text-4xl font-bold text-center text-white md:text-5xl md:text-left">
-                3+ YEARS OF <span className="text-gray-600">EXPERIENCE</span>
+                3+ YEARS OF{" "}
+                <span className="block text-gray-600">EXPERIENCE</span>
               </h3>
               <div className="space-y-6">
                 {experience.map((exp, index) => (
@@ -494,7 +497,7 @@ const HomePage = () => {
                     className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-900"
                   >
                     <img
-                      src={`/src/assets/${tool.icon}`}
+                      src={`/ayodhya.io/src/assets/${tool.icon}`}
                       alt={tool.name}
                       className="w-12 h-12 rounded-xl"
                     />
@@ -537,7 +540,6 @@ const HomePage = () => {
                 ))}
               </div>
             </div>
-            
           </div>
         </div>
       </div>
