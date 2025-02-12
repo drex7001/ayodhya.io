@@ -11,6 +11,15 @@ import {
   Edit,
 } from "lucide-react";
 import profile_pic from "../assets/mobile.png";
+
+
+import react from "../assets/react.png";
+import laravel from "../assets/laravel.png";
+import figma from "../assets/figma.png";
+import chatgpt from "../assets/chatgpt.png";
+import photoshop from "../assets/photoshop.png";
+import illustrator from "../assets/illustrator.png";
+
 import art from "../assets/art.png";
 
 const HomePage = () => {
@@ -497,7 +506,7 @@ const HomePage = () => {
                     className="flex items-center gap-3 p-4 transition-colors rounded-xl hover:bg-gray-900"
                   >
                     <img
-                      src={`/ayodhya.io/src/assets/${tool.icon}`}
+                      src={`/ayodhya.io/assets/${tool.icon}`}
                       alt={tool.name}
                       className="w-12 h-12 rounded-xl"
                     />
