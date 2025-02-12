@@ -110,7 +110,7 @@ const HomePage = () => {
         "Using FLOAT or DOUBLE for money calculations in SQL can lead to rounding errors and inaccuracies. This article explains why you should use DECIMAL instead and how to prevent financial inconsistencies in your database.",
       date: "Feb 5, 2025",
       readTime: "4min read",
-      link : "https://medium.com/@ayodhyaratnayake7001/why-you-should-avoid-using-float-or-double-for-money-in-sql-7615eae0d669"
+      link: "https://medium.com/@ayodhyaratnayake7001/why-you-should-avoid-using-float-or-double-for-money-in-sql-7615eae0d669",
     },
     // {
     //   title: "Navigating a Career in AI and Web Development",
@@ -134,50 +134,78 @@ const HomePage = () => {
     //   readTime: "5min read",
     // },
   ];
-  
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    const navbarHeight = 80; // Adjust this based on your navbar height
+    if (element) {
+      const offsetTop = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
-    <div className="min-h-screen text-white bg-black">
-      <div className="/*fixed*/ top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-6 bg-black/50 backdrop-blur-sm">
+    <div className="text-white bg-indigo-900/10">
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-6 bg-indigo-950/10 backdrop-blur-sm">
         <div className="flex gap-8 px-6 py-2 bg-indigo-500 bg-opacity-10 rounded-xl">
-          <div className="relative group">
+          <div
+            className="relative group"
+            onClick={() => scrollToSection("home")}
+          >
             <Home className="w-6 h-6 cursor-pointer hover:text-gray-400" />
             <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
               Home
             </span>
           </div>
-          <div className="relative group">
+          <div
+            className="relative group"
+            onClick={() => scrollToSection("recent")}
+          >
             <Folder className="w-6 h-6 cursor-pointer hover:text-gray-400" />
             <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
-              Files
+              Recent Projects
             </span>
           </div>
-          <div className="relative group">
+          <div
+            className="relative group"
+            onClick={() => scrollToSection("experience")}
+          >
             <Gift className="w-6 h-6 cursor-pointer hover:text-gray-400" />
             <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
-              Gift
+              Experience
             </span>
           </div>
-          <div className="relative group">
+          <div
+            className="relative group"
+            onClick={() => scrollToSection("tools")}
+          >
             <Key className="w-6 h-6 cursor-pointer hover:text-gray-400" />
             <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
-              Key
+              Tools
             </span>
           </div>
-          <div className="relative group">
+          <div
+            className="relative group"
+            onClick={() => scrollToSection("design-thoughts")}
+          >
             <Edit className="w-6 h-6 cursor-pointer hover:text-gray-400" />
             <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
-              Write
+              Design Thoughts
             </span>
           </div>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto text-white">
-        <div className="md:flex md:gap-8">
+      <div className="max-w-5xl pt-20 mx-auto overflow-hidden overflow-y-auto text-white">
+        <div className=" md:flex md:gap-8">
+          {/* left side */}
           <div className="px-4 md:w-96 xl:w-[400px] md:p-8">
             <div className="md:sticky md:top-8">
-              <div className="relative flex flex-col items-center p-6 overflow-hidden text-black bg-indigo-900/10 rounded-3xl">
+              <div className="relative flex flex-col items-center p-6 overflow-hidden text-black bg-indigo-900/25 rounded-3xl">
                 {/* <svg
                   className="absolute h-32 -mt-20 -ml-32 "
                   xmlns="http://www.w3.org/2000/svg"
@@ -243,8 +271,10 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="flex-1 p-4 md:p-8 md:max-h-screen md:overflow-y-auto no-scrollbar">
-            <div className="mb-12">
+          {/* h-[calc(100vh-80px)] */}
+          <div className="flex-1 p-4 md:p-8 md:overflow-y-auto no-scrollbar h-[calc(100vh-80px)]">
+            {/* Home */}
+            <div id="home" className="mb-12 ">
               <h1 className="mt-8 -mb-1 text-4xl font-bold text-center md:text-5xl sm:-mt-1 md:text-left">
                 SOFTWARE
               </h1>
@@ -297,7 +327,7 @@ const HomePage = () => {
                   </div>
                 ))}
               </div> */}
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <div className="relative p-6 overflow-hidden text-white bg-indigo-500 rounded-2xl">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -315,9 +345,7 @@ const HomePage = () => {
                   </svg>
 
                   <div className="mt-4 mb-4">
-                    <div className="text-2xl font-semibold">
-                    FULL STACK WEB
-                    </div>
+                    <div className="text-2xl font-semibold">FULL STACK WEB</div>
                     <div className="text-2xl font-semibold">DEVELOPER</div>
                   </div>
                   <div className="absolute p-1 border border-white rounded bottom-4 right-4">
@@ -360,7 +388,7 @@ const HomePage = () => {
                   </svg>
                   <div className="mt-4 mb-4">
                     <div className="text-2xl font-semibold">
-                    AI/ML ENGINEER,
+                      AI/ML ENGINEER,
                     </div>
                     <div className="text-2xl font-semibold">DATA SCIENCE </div>
                   </div>
@@ -403,7 +431,8 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="mb-12">
+            {/* Recent Projects */}
+            <div id="recent" className="mb-12 ">
               <h3 className="mb-6 text-4xl font-bold text-center text-white md:text-5xl md:text-left">
                 RECENT <span className="block text-gray-600">PROJECTS</span>
               </h3>
@@ -419,7 +448,9 @@ const HomePage = () => {
                         alt={project.name}
                         className="w-12 h-12 rounded-xl"
                       /> */}
-                      <h1 className="text-4xl font-extrabold text-indigo-500 uppercase">{project.image}</h1>
+                      <h1 className="text-4xl font-extrabold text-indigo-500 uppercase">
+                        {project.image}
+                      </h1>
                     </div>
                     <div>
                       <div className="font-semibold text-white">
@@ -432,7 +463,8 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="mb-16">
+            {/* Experience */}
+            <div id="experience" className="mb-12 ">
               <h3 className="mb-6 text-4xl font-bold text-center text-white md:text-5xl md:text-left">
                 3+ YEARS OF <span className="text-gray-600">EXPERIENCE</span>
               </h3>
@@ -449,7 +481,8 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="mb-16">
+            {/* Tools */}
+            <div id="tools" className="mb-12 ">
               <h3 className="mb-6 text-4xl font-bold text-center text-white md:text-5xl md:text-left">
                 PREMIUM <span className="block text-gray-600">TOOLS</span>
               </h3>
@@ -476,7 +509,8 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="mb-16">
+            {/* Design Thoughts */}
+            <div id="design-thoughts" className="mb-12 ">
               <h3 className="mb-6 text-4xl font-bold text-center text-white md:text-5xl md:text-left">
                 DESIGN <span className="block text-gray-600">THOUGHTS</span>
               </h3>
@@ -485,50 +519,29 @@ const HomePage = () => {
                 {designThoughts.map((post, index) => (
                   <div key={index} className="cursor-pointer group">
                     <a href={post.link} target="_blank" rel="noreferrer">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="text-xl font-semibold group-hover:text-gray-300">
-                        {post.title}
-                      </h4>
-                      <Edit className="w-4 h-4 text-gray-600" />
-                    </div>
-                    <p className="mb-2 text-sm text-gray-400">
-                      {post.description}
-                    </p>
-                    <div className="flex gap-4 text-sm text-gray-600">
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="text-xl font-semibold group-hover:text-gray-300">
+                          {post.title}
+                        </h4>
+                        <Edit className="w-4 h-4 text-gray-600" />
+                      </div>
+                      <p className="mb-2 text-sm text-gray-400">
+                        {post.description}
+                      </p>
+                      <div className="flex gap-4 text-sm text-gray-600">
+                        <span>{post.date}</span>
+                        <span>{post.readTime}</span>
+                      </div>
                     </a>
                   </div>
                 ))}
               </div>
             </div>
+            
           </div>
         </div>
       </div>
     </div>
-    // <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-    //   <div className="w-full p-2 m-4 bg-red-400">
-    //     <h className="text-xl">Section 01</h>
-    //     <p className="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis enim sed sapiente quos amet deleniti, officiis, voluptas laboriosam error iusto, ratione eum consectetur mollitia ipsum. Facere aspernatur doloribus quia nihil!</p>
-    //   </div>
-    //   <div className="w-full p-2 m-4 bg-green-400">
-    //      <h className="text-xl">Section 01</h>
-    //     <p className="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis enim sed sapiente quos amet deleniti, officiis, voluptas laboriosam error iusto, ratione eum consectetur mollitia ipsum. Facere aspernatur doloribus quia nihil!
-    //     adipisicing elit. Blanditiis enim sed sapiente quos amet deleniti, officiis, voluptas laboriosam error iusto, ratione eum consectetur mollitia ipsum. Facere aspernatur doloribus quia nihil!
-    //     adipisicing elit. Blanditiis enim sed sapiente quos amet deleniti, officiis, voluptas laboriosam error iusto, ratione eum consectetur mollitia ipsum. Facere aspernatur doloribus quia nihil!
-    //     adipisicing elit. Blanditiis enim sed sapiente quos amet deleniti, officiis, voluptas laboriosam error iusto, ratione eum consectetur mollitia ipsum. Facere aspernatur doloribus quia nihil!
-    //     </p>
-    //   </div>
-    //   <div className="w-full p-2 m-4 bg-blue-400">
-    //      <h className="text-xl">Section 01</h>
-    //     <p className="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis enim sed sapiente quos amet deleniti, officiis, voluptas laboriosam error iusto, ratione eum consectetur mollitia ipsum. Facere aspernatur doloribus quia nihil!</p>
-    //   </div>
-    //   <div className="w-full p-2 m-4 bg-purple-400">
-    //      <h className="text-xl">Section 01</h>
-    //     <p className="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis enim sed sapiente quos amet deleniti, officiis, voluptas laboriosam error iusto, ratione eum consectetur mollitia ipsum. Facere aspernatur doloribus quia nihil!</p>
-    //   </div>
-    // </div>
   );
 };
 
