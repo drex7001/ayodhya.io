@@ -11,7 +11,7 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-600"
                 placeholder="Your Name"
               />
             </div>
@@ -22,7 +22,7 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-600"
                 placeholder="Your Email"
               />
             </div>
@@ -32,7 +32,7 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-600"
                 rows="5"
                 placeholder="Your Message"
               ></textarea>

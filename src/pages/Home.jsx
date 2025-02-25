@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Mail,
   Instagram,
@@ -11,6 +11,7 @@ import {
   Edit,
 } from "lucide-react";
 import profile_pic from "../assets/mobile.png";
+import Modal from "../components/Modal";
 
 import react from "../assets/react.png";
 import laravel from "../assets/laravel.png";
@@ -145,6 +146,7 @@ const HomePage = () => {
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
+    // console.log(element);
     const navbarHeight = 80; // Adjust this based on your navbar height
     if (element) {
       const offsetTop = element.offsetTop - navbarHeight;
@@ -156,16 +158,219 @@ const HomePage = () => {
     }
   };
 
+  const [isModalOneOpen, setIsModalOneOpen] = useState(false);
+  const [isModalTwoOpen, setIsModalTwoOpen] = useState(false);
+
+  const openModalOne = () => setIsModalOneOpen(true);
+  const closeModalOne = () => setIsModalOneOpen(false);
+
+  const openModalTwo = () => setIsModalTwoOpen(true);
+  const closeModalTwo = () => setIsModalTwoOpen(false);
+
   return (
     <div className="text-white bg-indigo-900/10">
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-6 motion-preset-slide-down-md bg-indigo-950/10 backdrop-blur-sm">
+      <Modal isOpen={isModalOneOpen} onClose={closeModalOne}>
+        <h2 className="mb-6 text-3xl font-bold text-gray-100">
+          My Experience as web developer
+        </h2>
+        <div className="space-y-4 text-gray-300">
+          <ul className="space-y-6 list-none">
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Architected and developed highly customizable user and settings
+                management systems for multi-tenant SaaS applications,
+                leveraging Laravel and multiple MariaDB databases to ensure data
+                isolation and efficient scaling.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Implemented task automation strategies using queues and crontab,
+                along with custom bash scripts for log analysis and SQL table
+                optimization within Linux environments, significantly improving
+                process efficiency.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Led server migration to a new infrastructure, achieving 75%
+                faster performance with minimal disruption to business
+                operations. Set up MariaDB Master-Master replication to
+                strengthen system reliability and backup capabilities.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Optimized web application performance through Redis caching,
+                significantly reducing response times and improving system
+                reliability.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Successfully executed multiple Laravel framework upgrades from
+                version 7 through 10, ensuring seamless application
+                functionality and implementing the latest security features
+                while maintaining system stability.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Redesigned user interface with Figma, Photoshop, and
+                Illustrator, then developed a responsive frontend using
+                Tailwind, Alpine.js, and React, improving page load speed by 20%
+                and boosting user satisfaction, conversions, and SEO
+                performance.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Executed a complete website redesign with dark mode
+                functionality and a mobile-first responsive design, enhancing
+                cross-device user experience and accessibility.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Built a custom Shopify app, integrating Laravel backend with
+                React Polaris frontend, delivering a seamless merchant
+                interface.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Deployed and managed multiple self-hosted services using Docker,
+                including Plex media servers, Nextcloud file storage, and
+                Portainer, demonstrating strong containerization and network
+                infrastructure skills.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Integrated and developed RESTful APIs and GraphQL solutions for
+                Shopify and TikTok platforms, enabling seamless data exchange
+                and enhanced platform connectivity.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </Modal>
+
+      <Modal isOpen={isModalTwoOpen} onClose={closeModalTwo}>
+        <h2 className="mb-6 text-3xl font-bold text-gray-100">
+          AI/ML Projects
+        </h2>
+        <div className="space-y-4 text-gray-300">
+          <ul className="space-y-6 list-none">
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Developed a crop yield prediction model using historical
+                agricultural data.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Built a weather prediction model using Facebook’s Prophet for
+                rainfall forecasting.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Experimented with ARIMA, SARIMAX, and other time-series models
+                but found Prophet to be more accurate and easier to tune for
+                seasonal patterns.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Explored OpenAI’s ChatGPT APIs for text, image, and voice
+                generation using Laravel’s OpenAI package.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Worked with Ollama to deploy and experiment with open-source
+                LLMs like Llama 3 and Mistral for local inference and
+                fine-tuning tasks.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Developed a RAG application using OpenAI’s ChatGPT and
+                embeddings to enhance information retrieval from custom
+                datasets.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 mt-1.5 shrink-0">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              </span>
+              <p className="text-gray-300">
+                Built an advanced voice-to-text program using OpenAI’s Whisper
+                model, leveraging CUDA for accelerated processing on NVIDIA
+                GPUs.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </Modal>
+
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-6 motion-preset-slide-down-md bg-indigo-950/10 backdrop-blur-xs">
         <div className="flex gap-8 px-6 py-2 bg-indigo-500 bg-opacity-10 rounded-xl">
           <div
             className="relative group"
             onClick={() => scrollToSection("home")}
           >
             <Home className="w-6 h-6 cursor-pointer hover:text-gray-400" />
-            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
+            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded-sm opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
               Home
             </span>
           </div>
@@ -174,7 +379,7 @@ const HomePage = () => {
             onClick={() => scrollToSection("recent")}
           >
             <Folder className="w-6 h-6 cursor-pointer hover:text-gray-400" />
-            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
+            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded-sm opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
               Recent Projects
             </span>
           </div>
@@ -183,7 +388,7 @@ const HomePage = () => {
             onClick={() => scrollToSection("experience")}
           >
             <Gift className="w-6 h-6 cursor-pointer hover:text-gray-400" />
-            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
+            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded-sm opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
               Experience
             </span>
           </div>
@@ -192,7 +397,7 @@ const HomePage = () => {
             onClick={() => scrollToSection("tools")}
           >
             <Key className="w-6 h-6 cursor-pointer hover:text-gray-400" />
-            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
+            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded-sm opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
               Tools
             </span>
           </div>
@@ -201,7 +406,7 @@ const HomePage = () => {
             onClick={() => scrollToSection("design-thoughts")}
           >
             <Edit className="w-6 h-6 cursor-pointer hover:text-gray-400" />
-            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
+            <span className="absolute px-2 py-1 mt-2 text-xs text-white transition-opacity duration-300 transform -translate-x-1/2 bg-indigo-500 rounded-sm opacity-0 bg-opacity-20 left-1/2 group-hover:opacity-100">
               Design Thoughts
             </span>
           </div>
@@ -211,7 +416,7 @@ const HomePage = () => {
       <div className="max-w-6xl pt-20 mx-auto overflow-hidden overflow-y-auto text-white">
         <div className=" md:flex md:gap-8">
           {/* left side */}
-          <div className="px-4 md:w-96 xl:w-[400px] md:p-8 motion-preset-slide-right-md ">
+          <div className="px-4 md:w-96 xl:w-[400px] md:p-8 motion-preset-slide-right-md pt-8">
             <div className="md:sticky md:top-8">
               <div className="relative flex flex-col items-center p-6 overflow-hidden text-black bg-indigo-900/25 rounded-3xl">
                 {/* <svg
@@ -280,7 +485,7 @@ const HomePage = () => {
           </div>
 
           {/* h-[calc(100vh-80px)] */}
-          <div className="motion-preset-slide-left-md flex-1 p-4 md:p-8 md:overflow-y-auto no-scrollbar h-[calc(100vh-80px)]">
+          <div className="flex-1 p-4 motion-preset-slide-left-md md:p-8 md:overflow-y-auto no-scrollbar ">
             {/* Home */}
             <div id="home" className="mb-12 ">
               <div className="">
@@ -338,7 +543,10 @@ const HomePage = () => {
                 ))}
               </div> */}
               <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-                <div className="relative p-6 overflow-hidden text-white bg-indigo-500 rounded-2xl">
+                <div
+                  className="relative p-6 overflow-hidden text-white bg-indigo-500 rounded-2xl"
+                  onClick={openModalOne}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -358,7 +566,7 @@ const HomePage = () => {
                     <div className="text-2xl font-semibold">FULL STACK WEB</div>
                     <div className="text-2xl font-semibold">DEVELOPER</div>
                   </div>
-                  <div className="absolute p-1 border border-white rounded bottom-4 right-4">
+                  <div className="absolute p-1 border border-white rounded-sm bottom-4 right-4">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -374,7 +582,10 @@ const HomePage = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="relative p-6 overflow-hidden text-black bg-lime-400 rounded-2xl">
+                <div
+                  className="relative p-6 overflow-hidden text-black bg-lime-400 rounded-2xl"
+                  onClick={openModalTwo}
+                >
                   <div className="absolute top-0 left-0 ">
                     {/* <img
                     src={art}
@@ -398,11 +609,11 @@ const HomePage = () => {
                   </svg>
                   <div className="mt-4 mb-4">
                     <div className="text-2xl font-semibold">
-                      AI/ML ENGINEER,
+                      AI/ML ENTHUSIASTIC,
                     </div>
                     <div className="text-2xl font-semibold">DATA SCIENCE </div>
                   </div>
-                  <div className="absolute p-1 border border-black rounded bottom-4 right-4">
+                  <div className="absolute p-1 border border-black rounded-sm bottom-4 right-4">
                     <svg
                       className="w-6 h-6"
                       fill="none"

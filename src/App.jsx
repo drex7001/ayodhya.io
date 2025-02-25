@@ -63,7 +63,7 @@ export default App;
 //           </div>
 //           {/* Theme Toggle */}
 //           <button
-//             className="px-4 py-2 mt-4 text-gray-800 bg-white rounded hover:bg-gray-200"
+//             className="px-4 py-2 mt-4 text-gray-800 bg-white rounded-sm hover:bg-gray-200"
 //             onClick={toggleTheme}
 //           >
 //             {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
@@ -86,7 +86,7 @@ export default App;
 //         <div className="container px-4 mx-auto">
 //           <h2 className="mb-8 text-3xl font-bold text-white">Skills</h2>
 //           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow`}>
+//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow-sm`}>
 //               <h3 className="mb-4 font-bold text-white">Soft Skills</h3>
 //               <ul className="list-disc pl-5 space-y-2 text-${theme === 'dark' ? 'gray-400' : 'gray-600'}">
 //                 <li>Quick learner with the ability to adapt to new technologies and methodologies.</li>
@@ -95,7 +95,7 @@ export default App;
 //                 <li>Creative thinker with a knack for finding innovative solutions to complex challenges.</li>
 //               </ul>
 //             </div>
-//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow`}>
+//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow-sm`}>
 //               <h3 className="mb-4 font-bold text-white">Technical Skills</h3>
 //               <ul className="list-disc pl-5 space-y-2 text-${theme === 'dark' ? 'gray-400' : 'gray-600'}">
 //                 <li>Programming Languages: PHP, JavaScript, Java, Python, C</li>
@@ -115,7 +115,7 @@ export default App;
 //       <section id="experience" className={`py-16 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
 //         <div className="container px-4 mx-auto">
 //           <h2 className="mb-8 text-3xl font-bold text-white">Experience</h2>
-//           <div className={`bg-${theme === 'dark' ? 'gray-700' : 'gray-200'} p-6 rounded-lg shadow`}>
+//           <div className={`bg-${theme === 'dark' ? 'gray-700' : 'gray-200'} p-6 rounded-lg shadow-sm`}>
 //             <h3 className="text-xl font-bold text-white">Software Engineer - Tache Lanka Pvt Ltd</h3>
 //             <p className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'} mb-4`}>2021 - Present</p>
 //             <ul className="list-disc pl-5 space-y-2 text-${theme === 'dark' ? 'gray-400' : 'gray-600'}">
@@ -137,12 +137,12 @@ export default App;
 //         <div className="container px-4 mx-auto">
 //           <h2 className="mb-8 text-3xl font-bold text-white">Education</h2>
 //           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow`}>
+//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow-sm`}>
 //               <h3 className="text-xl font-bold text-white">MSc in Artificial Intelligence</h3>
 //               <p className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'} mb-4`}>University of Moratuwa - Dec 2023 - Present</p>
 //               <p className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'}`}>Reading</p>
 //             </div>
-//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow`}>
+//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow-sm`}>
 //               <h3 className="text-xl font-bold text-white">BSc in Information Technology</h3>
 //               <p className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'} mb-4`}>Sri Lanka Institute of Information Technology - 2019-2023</p>
 //               <p className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'}`}>Specializing in Software Engineering</p>
@@ -155,14 +155,14 @@ export default App;
 //         <div className="container px-4 mx-auto">
 //           <h2 className="mb-8 text-3xl font-bold text-white">Projects</h2>
 //           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow`}>
+//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow-sm`}>
 //               <h3 className="text-xl font-bold text-white">Advanced Weather Prediction</h3>
 //               <p className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'}`}>
 //                 Developed weather and rainfall forecasting using ML models including Logistic
 //                 Regression, Decision Trees, Neural Networks, Random Forest, and XGBoost.
 //               </p>
 //             </div>
-//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow`}>
+//             <div className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} p-6 rounded-lg shadow-sm`}>
 //               <h3 className="text-xl font-bold text-white">Crop Yield Prediction</h3>
 //               <p className={`text-${theme === 'dark' ? 'gray-400' : 'gray-600'}`}>
 //                 Built crop yield prediction models with Linear Regression, Random Forest, and
@@ -227,7 +227,7 @@ export default App;
 // //                 </li>
 // //                 <button
 // //                   onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-// //                   className="px-3 py-1 ml-4 rounded hover:bg-blue-700"
+// //                   className="px-3 py-1 ml-4 rounded-sm hover:bg-blue-700"
 // //                 >
 // //                   {theme === 'dark' ? 'Light' : 'Dark'} Mode
 // //                 </button>
@@ -329,19 +329,19 @@ export default App;
 // //       <div className="container px-4 mx-auto">
 // //         <h2 className="mb-8 text-3xl font-bold">Technical Skills</h2>
 // //         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-// //           <div className="p-6 bg-white rounded-lg shadow">
+// //           <div className="p-6 bg-white rounded-lg shadow-sm">
 // //             <h3 className="mb-4 font-bold">Programming Languages</h3>
 // //             <div className="flex flex-wrap gap-2">
 // //               {['PHP', 'JavaScript', 'Java', 'Python', 'C'].map((skill) => (
-// //                 <span key={skill} className="px-3 py-1 text-blue-800 bg-blue-100 rounded">{skill}</span>
+// //                 <span key={skill} className="px-3 py-1 text-blue-800 bg-blue-100 rounded-sm">{skill}</span>
 // //               ))}
 // //             </div>
 // //           </div>
-// //           <div className="p-6 bg-white rounded-lg shadow">
+// //           <div className="p-6 bg-white rounded-lg shadow-sm">
 // //             <h3 className="mb-4 font-bold">Web Development</h3>
 // //             <div className="flex flex-wrap gap-2">
 // //               {['HTML', 'CSS', 'Laravel', 'Tailwind', 'React'].map((skill) => (
-// //                 <span key={skill} className="px-3 py-1 text-green-800 bg-green-100 rounded">{skill}</span>
+// //                 <span key={skill} className="px-3 py-1 text-green-800 bg-green-100 rounded-sm">{skill}</span>
 // //               ))}
 // //             </div>
 // //           </div>
@@ -357,13 +357,13 @@ export default App;
 // //       <div className="container px-4 mx-auto">
 // //         <h2 className="mb-8 text-3xl font-bold">Projects</h2>
 // //         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-// //           <div className="p-6 bg-white rounded-lg shadow">
+// //           <div className="p-6 bg-white rounded-lg shadow-sm">
 // //             <h3 className="mb-4 text-xl font-bold">Project One</h3>
 // //             <p className="text-gray-600">
 // //               Description of project one.
 // //             </p>
 // //           </div>
-// //           <div className="p-6 bg-white rounded-lg shadow">
+// //           <div className="p-6 bg-white rounded-lg shadow-sm">
 // //             <h3 className="mb-4 text-xl font-bold">Project Two</h3>
 // //             <p className="text-gray-600">
 // //               Description of project two.
@@ -380,7 +380,7 @@ export default App;
 // //     <section className="py-16 bg-white">
 // //       <div className="container px-4 mx-auto">
 // //         <h2 className="mb-8 text-3xl font-bold">Contact</h2>
-// //         <div className="p-6 border bg-gray-800/50 backdrop-blur-sm rounded-xl border-gray-700/50">
+// //         <div className="p-6 border bg-gray-800/50 backdrop-blur-xs rounded-xl border-gray-700/50">
 // //           <div className="space-y-4">
 // //             <p className="flex items-center">
 // //               <span className="font-semibold min-w-20">Email:</span>
